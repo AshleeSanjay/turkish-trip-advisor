@@ -7,7 +7,7 @@ import Rating from "@material-ui/lab/Rating";
 
 // import mapStyles from "../../mapStyles";
 import useStyles from "./style.js";
-import { data } from "jquery";
+// import { data } from "jquery";
 
 const Map = ({
   setCoordinates,
@@ -24,7 +24,8 @@ const Map = ({
   return (
     <div className={classes.mapContainer}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyAjuunE9G41O1rtTEg0Pb-VoSDr2XhcV6M" }}
+        // bootstrapURLKeys={{ key: "AIzaSyAjuunE9G41O1rtTEg0Pb-VoSDr2XhcV6M" }}
+        bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAP_API_KEY }}
         defaultCenter={coordinates}
         center={coordinates}
         defaultZoom={14}
@@ -74,7 +75,7 @@ const Map = ({
             {/* )} */}
           </div>
         ))}
-        {console.log("Weather Data: ", weatherData)}
+        {/* {console.log("Weather Data: ", weatherData)} */}
         {/* {weatherData?.list?.map((data, i) => (
           <div key={i} lat={data.coord.lat} lng={data.coord.lng}>
             <img
